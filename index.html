@@ -3,29 +3,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Gugi|Pangolin" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="/js/js.js"></script>
   <title>WebDev(){Hoffman}</title>
 </head>
 <body>
   <nav class="navbar">
     <h1 class="nav-logo">WebDev(){Hoffman}</h1>
+    <div class="hamburger">
+        <span></span>
+    </div>
   </nav>
-  <section class="hero grid"></section>
-  <section class="about grid">
+  <section class="drop-down">
+    <div class="drop-down-menu">
+      <ul class="menu-items">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact-me" class="nav-link">Contact Me</a></li>
+      </ul>
+    </div>
+  </section>
+  <section id="hero" class="hero grid"></section>
+  <section id="about" class="about grid">
+    <h1 class="about-me-heading">About Me</h1>
     <div class="about-me-image">
       <img src="img/me.png" alt="Picture of me" class="me">      
     </div>
     <div class="about-me">
       <p class="about-info-1">
-        I am a front-end web developer based in Michigan. My goal is to constantly learn new technologies and to push the boundaries of my knowledge and skills farther and farther.
+        I am a freelance front-end web developer based in Michigan. My goal is to constantly learn new technologies and to push the boundaries of my knowledge and skills farther and farther.
       </p>
       <p class="about-info-3">
-        Today, I am rather proud to say that I am the proud recipient of a Grow with Google Developer Scholarship.
+        Today, I am rather proud to say that I am the proud recipient of a Grow with Google Front-End Web Developer Scholarship.
       </p>
     </div>
   </section>
-  <section class="skills grid">
+  <section id="skills" class="skills grid">
     <h1 class="skills-heading">Skills</h1>
     <div class="skills-grid">
       <img src="img/HTML5Logo.png" alt="HTML5 Logo" class="html-logo">
@@ -34,22 +54,43 @@
       <img src="img/nodejsLogo.png" alt="Node.js Logo" class="nodejs-logo">
     </div>
   </section>
-  <section class="projects grid">
+  <section id="projects" class="projects grid">
     <h1 class="project-heading">Projects</h1>
     <div class="project-grid">
-      <img src="/img/BestCityProject.png" alt="Best City Project" class="bestcity-project">
-      <img src="/img/LightBox.png" alt="Lightbox Project" class="Lightbox-project">
-      <img src="/img/InvitationProject.png" alt="Invitation Project" class="invitation-project">
-      <img src="/img/PuppiesProject.png" alt="Puppies Project" class="puppies-project">
-      <img src="img/Spoiler.png" alt="Spoiler-project" class="spoiler-project">
+      <div class="best-city-guide project-inside-grid">
+        <h2>Best City Guide</h2>
+        <a href="/TheBestCity/index.html" target="_blank"><img src="/img/BestCityProject.png" alt="BestCity Project" class="bestcity-project"></a>
+        <p class="bestcity-des">The fictitious “Best City Guide” website is an excellent example of responsive design.</p>
+      </div>
+      <div class="light-box project-inside-grid">
+        <h2>Image Gallery</h2>
+        <a href="/LightBox/index.html" target="_blank"><img src="/img/LightBox.png" alt="Lightbox Project" class="Lightbox-project"></a>
+        <p class="lightbox-des">This is a project I did to get better aquainted with jQuery.</p>
+      </div>
+      <div class="rsvp project-inside-grid">
+        <h2>RSVP Web App</h2>
+        <a href="/InvitationWebApp/index.html" target="_blank"><img src="/img/InvitationProject.png" alt="Invitation Project" class="invitation-project"></a>
+        <p class="rsvp-app">The “RSVP” fictitious web app is all about managing invitations to an event. This project was great practice learning javascript and responsive design.</p>
+      </div>
+      <div class="puppy-adoption project-inside-grid">
+        <h2>Puppy Adoption App</h2>
+        <a href="/Puppies/index.html" target="_blank"><img src="/img/PuppiesProject.png" alt="Puppies Project" class="puppies-project"></a>
+        <p class="puppy-adoption-app">With the fictitious “Puppy Adoption” web site you can see animals that are looking for adoption. With this project I was able to practice responsive design as well as get practice with jQuery.</p>
+      </div>
+      <div class="spoiler-reveal-app project-inside-grid">
+        <h2>Spoiler Reveal</h2>
+        <a href="/SpoilerPage/index.html" target="_blank"><img src="img/Spoiler.png" alt="Spoiler-project" class="spoiler-project"></a>
+        <p class="spoiler-des">This is a project I did to get more practice with jQuery.</p>
+      </div>
     </div>
   </section>
-  <footer class="footer grid">
+  <footer id="contact-me" class="footer grid">
+    <h1 class="contact-me-heading">Contact Me</h1>
     <div class="soc-icons icon-grid">
-      <i class="fab fa-youtube fa-2x"></i>
-      <i class="fab fa-linkedin fa-2x"></i>
-      <i class="fab fa-github-square fa-2x"></i>
-      <i class="fab fa-twitter-square fa-2x"></i>
+      <a href="https://www.youtube.com/channel/UCNFDWOA2nfhzy7SOeaeQrcA" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="https://www.linkedin.com/in/webdevhoffman/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://github.com/DavidHoffman80" target="_blank"><i class="fab fa-github-square fa-2x"></i></a>
+      <a href="https://twitter.com/WebDevHoffman" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a> 
     </div>
     <div class="footer-info">
       <p class="footer-copy">&copy; Dave Hoffman 2018. Coded by ME!</p>

@@ -1,5 +1,20 @@
+/*** Colors          ***/
+:root {
+  --nav-BG: rgb(244, 233, 205);
+  --nav-heading: rgb(3, 25, 38);
+  --section-heading: rgb(70, 129, 137);
+  --aboutme-section: rgb(119, 172, 162);
+  --project-section: rgb(157, 190, 187);
+}
+
 body {
   margin: 0;
+  color: var(--nav-heading);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*** Grid            ***/
@@ -8,6 +23,7 @@ body {
   width: 100%;
   display: grid;
   padding: 0 0.5rem;
+  font-family: 'Pangolin', cursive;
 }
 
 /*** Navbar          ***/
@@ -17,12 +33,131 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: white;
+  background: var(--nav-BG);
+  z-index: 1000;
 }
 
 .nav-logo {
   margin: 0 0 0 0.5rem;
   line-height: 50px;
+  font-family: 'Gugi', cursive;
+  color: var(--nav-heading);
+}
+
+.hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--nav-BG);
+  cursor: pointer;
+}
+
+.hamburger span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 4px;
+  background: var(--nav-heading);
+  display: block;
+  border-radius: 2px;
+}
+
+.hamburger span:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--nav-heading);
+  display: block;
+  border-radius: 2px;
+  transition-property: top, transform;
+  transition-delay: .5s, 0;
+  transition-duration: .5s, .5s;
+}
+      
+.hamburger span:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--nav-heading);
+  display: block;
+  border-radius: 2px;
+  transition-property: top, transform;
+  transition-delay: .5s, 0;
+  transition-duration: .5s, .5s;
+}
+        
+.hamburger.active span{
+    background: transparent;
+}
+        
+.hamburger.active span:before {
+  top: 0;
+  transform: rotate(45deg);
+  transition-delay: 0s, 0.5s;
+}
+        
+.hamburger.active span:after {
+  top: 0;
+  transform: rotate(-45deg);
+  transition-delay: 0s, 0.5s;
+}
+
+/*** Drop down       ***/
+.drop-down {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--nav-BG);
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: transform .5s ease-in-out;
+  font-family: 'Pangolin', cursive;
+  font-size: 2rem;
+}
+
+.drop-down a {
+  color: var(--nav-heading);
+}
+
+.drop-down a:visited {
+  color: var(--nav-heading);
+}
+
+.drop-down.active {
+  transform: translateY(0);
+  z-index: 10;
+}
+
+.drop-down-menu {
+  width: 90%;
+  margin: calc(50px + 1rem) auto 0 auto;
+}
+
+.menu-items {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.menu-items li {
+  padding: 1rem 0;
+}
+
+.menu-items li:nth-child(-n+3) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 /*** Hero Section    ***/
@@ -35,7 +170,8 @@ body {
 /*** About Section   ***/
 .about {
   position: relative;
-  background: red;
+  background: var(--aboutme-section);
+  padding-bottom: 2rem;
 }
 
 .about:after {
@@ -51,6 +187,11 @@ body {
   transform-origin: top left;
   transform: skewY(5deg);
   z-index: -1;
+}
+
+.about-me-heading {
+  margin: 2rem 0 1rem 0;
+  text-align: center;
 }
 
 .about-me-image {
@@ -86,7 +227,7 @@ body {
 }
 
 .skills-heading {
-  margin: 2rem 0 2rem 0;
+  margin: 3rem 0 1.5rem 0;
   z-index: 2;
 }
 
@@ -94,7 +235,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-row-gap: 20px;
   align-items: center;
   justify-items: center;
   z-index: 2;
@@ -107,12 +248,12 @@ body {
 /*** Project Section ***/
 .projects {
   position: relative;
-  background: darkgray;
-  padding-bottom: 4rem;
+  background: var(--project-section);
+  padding-bottom: 6rem;
 }
 
 .project-heading {
-  margin: 2rem 0 2rem 0;
+  margin: 3rem 0 2rem 0;
 }
 
 .project-grid {
@@ -122,7 +263,20 @@ body {
   grid-row-gap: 10px;
   align-items: center;
   justify-items: center;
+}
 
+.project-inside-grid {
+  display: grid;
+  justify-items: center;
+}
+
+.project-inside-grid h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.project-inside-grid p {
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .project-grid img {
@@ -161,13 +315,19 @@ body {
   transform: skewY(-7deg);
 }
 
+.contact-me-heading {
+  font-size: 1.5rem;
+}
+
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: end;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 
-.icon-grid, .footer-info {
+.icon-grid, .footer-info, .contact-me-heading {
   z-index: 2;
 }
 
@@ -189,4 +349,8 @@ body {
 
 .footer-info {
   align-self: end;
+}
+
+.footer-copy {
+  margin: 0 0 1rem 0;
 }
