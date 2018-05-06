@@ -8,12 +8,12 @@ My goal is to create a portfolio page that is beautiful and responsive as well a
 
 ## Minimum Requirements
 
-- [ ] 4 images
-- [ ] title
-- [ ] paragraph
-- [ ] logo
-- [ ] use HTML5
-- [ ] customize image/ images
-- [ ] customize text
-- [ ] grid based layout
+- [x] 4 images
+- [x] title
+- [x] paragraph
+- [x] logo
+- [x] use HTML5
+- [x] customize image/ images
+- [x] customize text
+- [x] grid based layout
 - [ ] content must be responsive (mobile, tablet and desktop)
