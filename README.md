@@ -16,4 +16,4 @@ My goal is to create a portfolio page that is beautiful and responsive as well a
 - [x] customize image/ images
 - [x] customize text
 - [x] grid based layout
-- [ ] content must be responsive (mobile, tablet and desktop)
+- [x] content must be responsive (mobile, tablet and desktop)
